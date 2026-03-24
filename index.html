@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Suma de Números</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="card">
-        <h2>Calculadora Simple</h2>
-        <input type="number" id="n1" placeholder="Primer número">
-        <input type="number" id="n2" placeholder="Segundo número">
-        <button onclick="sumar()">Calcular Suma</button>
-        <div id="resultado">El resultado aparecerá aquí</div>
-    </div>
-    
+    <ul>
+        <li>
+            <div class="card">
+                <h2>Calculadora Simple</h2>
+                <input type="number" id="n1" placeholder="Primer número">
+                <input type="number" id="n2" placeholder="Segundo número">
+                <button onclick="sumar()">Calcular Suma</button>
+                <div id="resultado">El resultado aparecerá aquí</div>
+            </div>
+        </li>
+        <br>
+        <br>
+        <li>
+            <div class="card">
+                <h2>Calculadora de Factorial</h2>
+                <input type="number" id="numeroInput" placeholder="Ingresa un número (e.g. 5)" min="0">
+                <button onclick="calcularFactorial()">Calcular Factorial</button>
+                <div id="resultado2">El resultado aparecerá aquí</div>
+            </div>
+        </li>
+    </ul>
+
+
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -15,3 +15,30 @@ function sumar() {
     // Mostramos el resultado en el div correspondiente
     document.getElementById('resultado').innerText = `Resultado: ${resultadoSuma}`;
 }
+
+function calcularFactorial() {
+    const input = document.getElementById('numeroInput').value;
+    const n = parseInt(input);
+
+    // Validaciones básicas
+    if (input === "") {
+        document.getElementById('resultado2').innerText = "Por favor, escribe un número.";
+        return;
+    }
+    if (n < 0) {
+        document.getElementById('resultado2').innerText = "No existe el factorial de números negativos.";
+        return;
+    }
+    if (n === 0 || n === 1) {
+        document.getElementById('resultado2').innerText = `Resultado: 1`;
+        return;
+    }
+
+    let factorial = 1;
+    // Bucle para multiplicar: 1 * 2 * 3... hasta n
+    for (let i = 2; i <= n; i++) {
+        factorial *= i;
+    }
+
+    document.getElementById('resultado2').innerText = `El factorial de ${n} es: ${factorial}`;
+}
