@@ -42,3 +42,33 @@ function calcularFactorial() {
 
     document.getElementById('resultado2').innerText = `El factorial de ${n} es: ${factorial}`;
 }
+function generarFibonacci() {
+    const n = parseInt(document.getElementById('cantidad').value);
+    const contenedor = document.getElementById('resultado-lista');
+    
+    // Limpiar resultados anteriores
+    contenedor.innerHTML = "";
+
+    if (isNaN(n) || n <= 0) {
+        contenedor.innerHTML = "<p style='color:red;'>Introduce un número válido mayor a 0</p>";
+        return;
+    }
+
+    let serie = [0, 1];
+
+    if (n === 1) serie = [0];
+    
+    // Generamos la serie hasta llegar a 'n' elementos
+    for (let i = 2; i < n; i++) {
+        const nuevoNumero = serie[i - 1] + serie[i - 2];
+        serie.push(nuevoNumero);
+    }
+
+    // Renderizamos cada número en el HTML
+    serie.forEach(num => {
+        const span = document.createElement('span');
+        span.className = 'fib-number';
+        span.innerText = num;
+        contenedor.appendChild(span);
+    });
+}
